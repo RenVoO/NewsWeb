@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h3{
+    font-size: 40px;
+    text-align: center;
+    color: #333;
+}
+
+h2{
+    text-align: center;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.logo{
+    margin-top: 10px;
+}
+
+.navbar {
+    background-color: transparent;
+    
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
+}
+
+.navbar button {
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #e74c3c;
+}
+
+.navbar button:hover {
+    background-color: #c0392b;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.news-item img {
+    max-width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.news-item .news-content {
+    text-align: left;
+    flex-grow: 1;
+}
+
+.news-content a{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.news-item a {
+    color: #3498db;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.news-actions {
+    margin-top: 10px;
+}
+
+.news-actions a {
+    color: white;
+    margin-left: 10px;
+}
+
+.icon-btn {
+    display: inline-block;
+    margin: 10px 20px;
+    padding: 10px;
+    background-color: #711DB0;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.icon-btn i {
+    font-size: 34px;
+    vertical-align: middle;
+}
+
+.icon-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+.btn-delete{
+    float: right;
+    background-color: #002379;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-edit{
+    float: right;
+    background-color: #002379;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-edit:hover{
+    background-color: #c0392b;
+}
+
+.footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.message h1 {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.sm a {
+    font-size: 25px;
+    color: #3498db;
+    margin: 0 10px;
+}
+
+.sm a:hover {
+    color: #2980b9;
+}
+
+.credit {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+.search-form {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.search-form input {
+    width: 170%;
+    padding: 5px;
+    border: 2px solid #A91D3A;
+    border-radius: 5px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.search-form button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}

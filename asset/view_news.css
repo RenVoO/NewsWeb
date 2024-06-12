@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a{
+    background-color: #002379;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: gray;
+    transition: 0.5s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+p {
+    font-size: 1.25em;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.news-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.news-author,
+.news-date {
+    margin: 0;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+.back-link:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .news-meta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-author,
+    .news-date {
+        margin-bottom: 10px;
+    }
+}
