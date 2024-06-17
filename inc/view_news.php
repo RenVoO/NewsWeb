@@ -19,7 +19,7 @@ $news = getNews($_GET['id']);
         <p><?php echo $news['description']; ?></p>
         <p>Author: <?php echo getUser($news['author_id'])['username']; ?></p>
         <p>Date: <?php echo $news['created_at']; ?></p>
-        <a href="dashboard.php">Back to Dashboard</a>
+        <a href="Home.php">Back to Home</a>
     </div>
 </body>
 </html>

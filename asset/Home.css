@@ -5,13 +5,13 @@ body {
     padding: 0;
 }
 
-h3 {
+h3{
     font-size: 40px;
     text-align: center;
     color: #333;
 }
 
-h2 {
+h2{
     text-align: center;
     color: black;
 }
@@ -19,6 +19,7 @@ h2 {
 a {
     text-decoration: none;
     color: white;
+    text-decoration: none;
     margin: 0 5px;
 }
 
@@ -39,17 +40,18 @@ button:hover {
     background-color: #2980b9;
 }
 
-.logo {
+.logo{
     margin-top: 10px;
 }
 
 .navbar {
     background-color: transparent;
+    
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);    
 }
 
 .navbar button {
@@ -69,37 +71,6 @@ button:hover {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-}
-
-.user-info {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.user-info h4 {
-    margin: 0;
-    color: #333;
-}
-
-.user-info p {
-    margin: 5px 0;
-    color: #555;
-}
-
-.user-info button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.user-info button:hover {
-    background-color: #2980b9;
 }
 
 .news-list {
@@ -130,7 +101,7 @@ button:hover {
     flex-grow: 1;
 }
 
-.news-content a {
+.news-content a{
     font-size: 20px;
     font-weight: 600;
 }
@@ -173,8 +144,7 @@ button:hover {
     background-color: #2980b9;
     transform: scale(1.1);
 }
-
-.btn-delete {
+.btn-delete{
     float: right;
     background-color: #002379;
     color: white;
@@ -185,7 +155,7 @@ button:hover {
     text-decoration: none;
 }
 
-.btn-edit {
+.btn-edit{
     float: right;
     background-color: #002379;
     color: white;
@@ -196,7 +166,7 @@ button:hover {
     text-decoration: none;
 }
 
-.btn-edit:hover {
+.btn-edit:hover{
     background-color: #c0392b;
 }
 
@@ -249,6 +219,7 @@ button:hover {
     margin-top: 20px;
 }
 
+
 .search-form {
     padding: 10px;
     display: flex;
@@ -256,6 +227,7 @@ button:hover {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    
 }
 
 .search-form input {

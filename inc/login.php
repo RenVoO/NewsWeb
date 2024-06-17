@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['userid'] = $user['id'];
-            header("Location: dashboard.php");
+            header("Location: Home.php");
             exit();
         } else {
             $error = "Invalid password.";

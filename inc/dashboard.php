@@ -21,7 +21,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../asset/dashboard.css">
+    <link rel="stylesheet" href="../asset/Dashboard.css">
 </head>
 <body>
     <div class="navbar">
@@ -34,11 +34,19 @@ $result = $conn->query($sql);
                 <button type="submit"><i class='bx bx-search'></i></button>
             </form>
             <a class="icon-btn" href="create_news.php"><i class='bx bx-news'></i></a>
-            <a class="icon-btn" href="logout.php"><i class='bx bxs-user-circle'></i></a>
+            <a class="icon-btn" href="logout.php"><i class='bx bx-log-out' ></i></a>
+            <a class="icon-btn" href="Home.php"><i class='bx bx-caret-left-circle'></i></a>
         </div>
     </div>
     <div class="container">
-        <h3 >Berita Terkini</h3>
+        <h3>Info User</h3>
+        <div class="user-info">
+            <h4>Welcome, <?php echo htmlspecialchars($user['username']); ?></h4>
+            <p>Username: <?php echo htmlspecialchars($user['username']); ?></p>
+            <p>Password: <span id="password"><?php echo htmlspecialchars($user['password']); ?></span></p>
+            <button onclick="togglePassword()">Show/Hide Password</button>
+        </div>
+        <h3>Data Berita</h3>
         <ul class="news-list">
             <?php while ($news = $result->fetch_assoc()) { ?>
                 <li class="news-item">
@@ -53,8 +61,8 @@ $result = $conn->query($sql);
                     
                     <div class="news-actions">
                         <?php if ($news['author_id'] == $userid) { ?>
-                            <a  class="btn-edit" href="edit_news.php?id=<?php echo $news['id']; ?>">Edit</a>
-                            <a  class="btn-delete"  href="delete_news.php?id=<?php echo $news['id']; ?>">Delete</a>
+                            <a class="btn-edit" href="edit_news.php?id=<?php echo $news['id']; ?>">Edit</a>
+                            <a class="btn-delete" href="delete_news.php?id=<?php echo $news['id']; ?>">Delete</a>
                         <?php } ?>
                     </div>
                 </li>
@@ -62,30 +70,37 @@ $result = $conn->query($sql);
         </ul>
     </div>
     <footer>
-    <section class="footer">
-    <div class="footer-container">
-                            
-            <div class="message">
-                <h1>Kami ingin mengucapkan terima kasih yang sebesar-besarnya atas kunjungan Anda ke situs 
-                    berita kami. Kami sangat menghargai waktu dan perhatian Anda dalam mengikuti berita dan informasi yang kami sajikan. Dukungan Anda sangat berarti 
-                    bagi kami, dan kami berkomitmen untuk terus memberikan berita terkini, terpercaya, dan berkualitas.</h1>
-            </div>
-
-            <div class="box">
-                <div class="box-text">
-                    <p><i class='bx bx-at' style="font-size: 25px;"></i>Follow Drap On Social Media  </p>
+        <section class="footer">
+            <div class="footer-container">
+                <div class="message">
+                    <h1>Kami ingin mengucapkan terima kasih yang sebesar-besarnya atas kunjungan Anda ke situs 
+                        berita kami. Kami sangat menghargai waktu dan perhatian Anda dalam mengikuti berita dan informasi yang kami sajikan. Dukungan Anda sangat berarti 
+                        bagi kami, dan kami berkomitmen untuk terus memberikan berita terkini, terpercaya, dan berkualitas.</h1>
                 </div>
-                <div class="sm">
-                    <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-                    <a href="#" target="_blank"><i class='bx bxl-reddit' ></i></i></a>
-                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-                    <a href="#" target="_blank"><i class='bx bxl-twitter' ></i></i></a>
+                <div class="box">
+                    <div class="box-text">
+                        <p><i class='bx bx-at' style="font-size: 25px;"></i>Follow Drap On Social Media  </p>
+                    </div>
+                    <div class="sm">
+                        <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+                        <a href="#" target="_blank"><i class='bx bxl-reddit'></i></a>
+                        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                        <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <h1 class="credit" style="font-size: 25px;">Thanks for visit <i class="fa-solid fa-user-secret"></i></h1>
+            <h1 class="credit" style="font-size: 25px;">Thanks for visit <i class="fa-solid fa-user-secret"></i></h1>
+        </section>
     </footer>
-    </section>
+    <script>
+        function togglePassword() {
+            var password = document.getElementById('password');
+            if (password.style.display === 'none') {
+                password.style.display = 'inline';
+            } else {
+                password.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
