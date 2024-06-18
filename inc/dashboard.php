@@ -8,11 +8,13 @@ $user = getUser($userid);
 $search = '';
 if (isset($_GET['search'])) {
     $search = $_GET['search'];
-    $sql = "SELECT * FROM news WHERE title LIKE '%$search%' OR description LIKE '%$search%'";
+    $sql = "SELECT * FROM news WHERE (author_id = '$userid') AND (title LIKE '%$search%' OR description LIKE '%$search%')";
 } else {
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news WHERE author_id = '$userid'";
 }
 $result = $conn->query($sql);
+
+$news_count = $result->num_rows;
 ?>
 
 <!DOCTYPE html>
@@ -47,6 +49,7 @@ $result = $conn->query($sql);
             <button onclick="togglePassword()">Show/Hide Password</button>
         </div>
         <h3>Data Berita</h3>
+        <?php if ($news_count > 0) { ?>
         <ul class="news-list">
             <?php while ($news = $result->fetch_assoc()) { ?>
                 <li class="news-item">
@@ -60,34 +63,20 @@ $result = $conn->query($sql);
                     </div>
                     
                     <div class="news-actions">
-                        <?php if ($news['author_id'] == $userid) { ?>
-                            <a class="btn-edit" href="edit_news.php?id=<?php echo $news['id']; ?>">Edit</a>
-                            <a class="btn-delete" href="delete_news.php?id=<?php echo $news['id']; ?>">Delete</a>
-                        <?php } ?>
+                        <a class="btn-edit" href="edit_news.php?id=<?php echo $news['id']; ?>">Edit</a>
+                        <a class="btn-delete" href="delete_news.php?id=<?php echo $news['id']; ?>">Delete</a>
                     </div>
                 </li>
             <?php } ?>
         </ul>
+        <?php } else { ?>
+        <p>Belum ada berita yang dibuat.</p>
+        <?php } ?>
     </div>
     <footer>
         <section class="footer">
             <div class="footer-container">
-                <div class="message">
-                    <h1>Kami ingin mengucapkan terima kasih yang sebesar-besarnya atas kunjungan Anda ke situs 
-                        berita kami. Kami sangat menghargai waktu dan perhatian Anda dalam mengikuti berita dan informasi yang kami sajikan. Dukungan Anda sangat berarti 
-                        bagi kami, dan kami berkomitmen untuk terus memberikan berita terkini, terpercaya, dan berkualitas.</h1>
-                </div>
-                <div class="box">
-                    <div class="box-text">
-                        <p><i class='bx bx-at' style="font-size: 25px;"></i>Follow Drap On Social Media  </p>
-                    </div>
-                    <div class="sm">
-                        <a href="#" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
-                        <a href="#" target="_blank"><i class='bx bxl-reddit'></i></a>
-                        <a href="#"><i class='bx bxl-facebook-circle'></i></a>
-                        <a href="#" target="_blank"><i class='bx bxl-twitter'></i></a>
-                    </div>
-                </div>
+              
             </div>
             <h1 class="credit" style="font-size: 25px;">Thanks for visit <i class="fa-solid fa-user-secret"></i></h1>
         </section>
