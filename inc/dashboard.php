@@ -73,14 +73,7 @@ $news_count = $result->num_rows;
         <p>Belum ada berita yang dibuat.</p>
         <?php } ?>
     </div>
-    <footer>
-        <section class="footer">
-            <div class="footer-container">
-              
-            </div>
-            <h1 class="credit" style="font-size: 25px;">Thanks for visit <i class="fa-solid fa-user-secret"></i></h1>
-        </section>
-    </footer>
+    
     <script>
         function togglePassword() {
             var password = document.getElementById('password');
