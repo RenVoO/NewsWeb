@@ -29,11 +29,11 @@ $result = $conn->query($sql);
             <img src="../image/Logo.png" width="150">
         </div>
         <div>
-            <form method="GET" action="dashboard.php" class="search-form">
+            <form method="GET" action="Home.php" class="search-form">
                 <input type="text" name="search" placeholder="Search news..." value="<?php echo htmlspecialchars($search); ?>">
                 <button type="submit"><i class='bx bx-search'></i></button>
             </form>
-            <a class="icon-btn" href="dashboard.php"><i class='bx bxs-user'></i></a>
+            <a class="icon-btn" href="Profile.php"><i class='bx bxs-user'></i></a>
             <a class="icon-btn" href="logout.php"><i class='bx bx-log-out' ></i></a>
         </div>
     </div>

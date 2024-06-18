@@ -23,7 +23,7 @@ $news_count = $result->num_rows;
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../asset/Dashboard.css">
+    <link rel="stylesheet" href="../asset/Profile.css">
 </head>
 <body>
     <div class="navbar">
