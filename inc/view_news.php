@@ -1,6 +1,5 @@
 <?php
 require_once '../admin/function.php';
-checkLogin();
 
 $news = getNews($_GET['id']);
 ?>

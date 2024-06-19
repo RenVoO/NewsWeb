@@ -1,9 +1,9 @@
 <?php
 require_once '../admin/function.php';
-checkLogin();
 
-$userid = $_SESSION['userid'];
-$user = getUser($userid);
+
+$userid = isset($_SESSION['userid']) ? $_SESSION['userid'] : null;
+$user = $userid ? getUser($userid) : null;
 
 $search = '';
 if (isset($_GET['search'])) {
@@ -29,15 +29,15 @@ $result = $conn->query($sql);
             <img src="../image/Logo.png" width="150">
         </div>
         <div>
-            <form method="GET" action="Home.php" class="search-form">
+            <form method="GET" action="landingpage.php" class="search-form">
                 <input type="text" name="search" placeholder="Search news..." value="<?php echo htmlspecialchars($search); ?>">
                 <button type="submit"><i class='bx bx-search'></i></button>
             </form>
-            <a class="icon-btn" href="Profile.php"><i class='bx bxs-user'></i></a>
+            <a class="icon-btn" href="register.php"><i class='bx bxs-log-in-circle'></i></a>
         </div>
     </div>
     <div class="container">
-        <h3 >Berita Terkini</h3>
+        <h3>Berita Terkini</h3>
         <ul class="news-list">
             <?php while ($news = $result->fetch_assoc()) { ?>
                 <li class="news-item">
@@ -47,7 +47,7 @@ $result = $conn->query($sql);
 
                     <div class="news-content">
                         <a style="color:#c0392b;" href="view_news.php?id=<?php echo $news['id']; ?>"><?php echo $news['title']; ?></a>
-                      
+                        
                     </div>
                     
                 </li>

@@ -59,7 +59,7 @@ $news_count = $result->num_rows;
 
                     <div class="news-content">
                         <a style="color:#c0392b;" href="view_news.php?id=<?php echo $news['id']; ?>"><?php echo $news['title']; ?></a>
-                        <p><?php echo $news['description']; ?></p>
+                      
                     </div>
                     
                     <div class="news-actions">

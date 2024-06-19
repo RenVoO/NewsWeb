@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: dashboard.php");
+        header("Location: Home.php");
         exit();
     } else {
         $error = "Error: " . $sql . "<br>" . $conn->error;

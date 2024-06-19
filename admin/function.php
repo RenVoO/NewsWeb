@@ -4,7 +4,7 @@ require_once '../admin/koneksi.php';
 
 function checkLogin() {
     if (!isset($_SESSION['userid'])) {
-        header("Location: login.php");
+        header("Location: landingpage.php");
         exit();
     }
 }
